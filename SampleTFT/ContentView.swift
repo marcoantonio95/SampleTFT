@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
+    // Test Jira integration
     var body: some View {
         NavigationSplitView {
             List {
