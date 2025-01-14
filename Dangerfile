@@ -4,7 +4,7 @@ unless /^(feat|fix|chore):\s/.match(github.pr_title)
     fail("PR title should start with one of: #{options}. Ex.: 'feat: create some view'")
 end
 
-unless /todo(.*)(atlassian.net)|\[skip task\]/.match(github.pr_body.downcase)
+unless /task(.*)(mmbrothers.atlassian.net)|\[skip task\]/.match(github.pr_body.downcase)
     fail(
       "Missing task link on PR description.
       If this PR has no task, you should add `\"[skip task]\"` anywhere on the description."
