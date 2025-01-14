@@ -27,6 +27,8 @@ fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
 # Configure swiftlint
-swiftlint.lint_files(
-    inline_mode: true # Mostra erros e avisos diretamente no PR
-)
+swiftlint.config_file = '.swiftlint.yml'
+
+swiftlint.lint_files(inline_mode: true, fail_on_error: true) { |violation|
+has_linting_violations = true
+}
