@@ -2,8 +2,10 @@ name: Run Danger on PRs
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, edited]
 
+  workflow_dispatch: 
+    
 jobs:
   danger:
     runs-on: ubuntu-latest
