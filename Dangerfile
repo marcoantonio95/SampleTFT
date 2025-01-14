@@ -29,6 +29,6 @@ fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 # Configure swiftlint
 swiftlint.config_file = '.swiftlint.yml'
 
-swiftlint.lint_files(inline_mode: true, fail_on_error: true) { |violation|
+swiftlint.lint_files(inline_mode: false, fail_on_error: true) { |violation|
 has_linting_violations = true
 }
