@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 // teste do danger
+    var a = "a"
     var body: some View {
         NavigationSplitView {
             List {
