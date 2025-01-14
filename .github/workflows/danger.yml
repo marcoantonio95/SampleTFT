@@ -4,23 +4,26 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, edited]
 
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   danger:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install SwiftLint
+        run: brew install swiftlint
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0 # Versão compatível com o Danger
+          ruby-version: 3.0
 
       - name: Install Danger
-        run: gem install danger
+        run: gem install danger danger-swiftlint
 
       - name: Run Danger
         env:
