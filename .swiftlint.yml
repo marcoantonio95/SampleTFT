@@ -1,126 +1,88 @@
+# Regras desabilitadas (somente se justificadas)
 disabled_rules:
-  - force_cast
-  - force_try
-  - cyclomatic_complexity
-  - todo
-  - nesting
-  - line_length
-  - identifier_name
-  - trailing_whitespace
-  - trailing_comma
-  - inclusive_language
-  - type_name
-  - blanket_disable_command
-  - void_function_in_ternary
-  - orphaned_doc_comment
+  - force_cast           # Evitar casts forçados.
+  - force_try            # Evitar o uso de try! que ignora erros.
+  - trailing_newline     # Permitir ausência de nova linha no final do arquivo.
+  - todo                 # Evitar deixar comentários TODO em produção.
+  - cyclomatic_complexity # Flexibilidade para métodos complexos em casos específicos.
+  - line_length          # Substituído por warnings customizados.
 
+# Regras habilitadas e customizadas
 opt_in_rules:
-  - array_init
-  - closure_body_length
-  - closure_spacing
-  - collection_alignment
-  - contains_over_filter_count
-  - contains_over_filter_is_empty
-  - contains_over_first_not_nil
-  - contains_over_range_nil_comparison
-  - convenience_type
-  - discouraged_object_literal
-  - empty_collection_literal
-  - empty_count
-  - prefer_nil_literal
-  - closure_end_indentation
-  - empty_string
-  - empty_xctest_method
-  - enum_case_associated_values_count
-  - expiring_todo
-  - explicit_init
-  - redundant_void_return
-  - prefer_self_type
-  - fallthrough
-  - fatal_error_message
-  - file_name_no_space
-  - first_where
-  - flatmap_over_map_reduce
-  - force_unwrapping
-  - identical_operands
-  - implicitly_unwrapped_optional
-  - indentation_width
-  - joined_default_parameter
-  - large_tuple
-  - last_where
-  - legacy_multiple
-  - legacy_random
-  - literal_expression_end_indentation
-  - lower_acl_than_parent
-  - modifier_order
-  - multiline_arguments
-  - multiline_arguments_brackets
-  - multiline_function_chains
-  - multiline_literal_brackets
-  - multiline_parameters
-  - multiline_parameters_brackets
-  - nslocalizedstring_key
-  - nslocalizedstring_require_bundle
-  - object_literal
-  - operator_usage_whitespace
-  - optional_enum_case_matching
-  - overridden_super_call
-  - override_in_extension
-  - pattern_matching_keywords
-  - prefer_self_type_over_type_of_self
-  - private_action
-  - private_outlet
-  - prohibited_interface_builder
-  - prohibited_super_call
-  - quick_discouraged_call
-  - quick_discouraged_focused_test
-  - quick_discouraged_pending_test
-  - raw_value_for_camel_cased_codable_enum
-  - reduce_into
-  - redundant_nil_coalescing
-  - redundant_type_annotation
-  - required_enum_case
-  - single_test_class
-  - sorted_first_last
-  - sorted_imports
-  - static_operator
-  - strong_iboutlet
-  - toggle_bool
-  - unavailable_function
-  - unneeded_parentheses_in_closure_argument
-  - unowned_variable_capture
-  - vertical_parameter_alignment_on_call
-  - vertical_whitespace_between_cases
-  - xct_specific_matcher
-  - yoda_condition
+  - empty_count          # Usar .isEmpty em vez de .count == 0.
+  - explicit_enum_raw_value # Exigir valores explícitos para enums com raw values.
+  - explicit_init        # Exigir inicializadores explícitos.
+  - closure_end_indentation # Manter consistência na indentação de closures.
+  - prefer_self_type     # Usar `Self` para referenciar o tipo da instância atual.
+  - prefer_nimble        # Para projetos usando testes com Nimble.
+  - discouraged_object_literal # Evitar literais para imagens, cores, etc.
+  - redundant_void_return # Evitar retornos redundantes do tipo Void.
+  - yoda_conditions      # Preferir condições no formato normal (ex: `x == 10`).
+
+# Limites de código e formatação
+line_length:
+  warning: 100           # Avisar quando uma linha ultrapassar 100 caracteres.
+  error: 120             # Forçar correção se ultrapassar 120 caracteres.
 
 file_length:
-  ignore_comment_only_lines: true
+  warning: 400           # Avisar quando o arquivo ultrapassar 400 linhas.
+  error: 800             # Arquivo com mais de 800 linhas será considerado erro.
 
-analyzer_rules:
-  - explicit_self
-  - unused_declaration
-  - unused_import
-  
-line_length: 120
-indentation:
-  type: space
-  width: 2
-trailing_whitespace: true
-file_header: true
-type_name:
-  min_length: 3
+type_body_length:
+  warning: 300           # Limite de linhas por tipo.
+  error: 500
+
+function_body_length:
+  warning: 30            # Avisar quando uma função ultrapassar 30 linhas.
+  error: 50              # Forçar correção acima de 50 linhas.
+
 identifier_name:
-  min_length: 3
-  max_length: 40
+  min_length: 3          # Evitar identificadores curtos (ex: `x`, `y`).
+  max_length: 50         # Evitar identificadores longos demais.
   excluded:
-    - id
+    - id                 # `id` pode ser usado como identificador curto.
+
+# Indentação e espaçamento
+indentation:
+  type: space            # Usar espaços em vez de tabulação.
+  width: 4               # Indentação de 4 espaços para melhorar legibilidade.
+
+trailing_whitespace:
+  ignores_empty_lines: false
+  ignores_comments: false
+
+vertical_whitespace:
+  max_empty_lines: 1     # Apenas uma linha vazia permitida consecutivamente.
+
+# Regras de boas práticas
+force_unwrapping:
+  severity: error        # Evitar uso de force unwraps (`!`).
+
+implicitly_unwrapped_optional:
+  severity: error        # Evitar opcionais implicitamente descompactados.
 
 redundant_optional_initialization: true
+redundant_string_enum_value: true # Evitar valores de enum redundantes em Strings.
+
+# Segurança
+duplicate_imports: true   # Evitar importações duplicadas.
+unowned_variable_capture: true # Evitar capturas `unowned` que podem gerar crashes.
+discarded_notification_center_observer: true # Garantir remoção de observers.
+
+# Performance
 unused_closure_parameter: true
-force_unwrapping: true
-redundant_bool_literal: true
-class_delegate_protocol: true
-file_length:
-  warning: 500
-  error: 1000
+private_over_fileprivate: true  # Usar `private` em vez de `fileprivate` quando possível.
+
+# Testes
+xctfail_message: true     # Sempre fornecer mensagens claras em falhas de testes.
+
+# Configurações gerais
+excluded:
+  - .swiftlint.yml       # Ignorar o próprio arquivo de configuração.
+
+custom_rules:
+  force_unwrap:
+    name: "Uso de Force Unwrap"
+    regex: "!"
+    message: "Evite usar `!`, pois pode causar crashes."
+    severity: error
