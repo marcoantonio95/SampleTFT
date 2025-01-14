@@ -13,6 +13,12 @@ struct ContentView: View {
     @Query private var items: [Item]
 // teste do danger
     var a = "a"
+    
+    
+    
+    
+    lazy var testWrap: String? = nil
+    lazy var testUnwrap: String = testWrap!
     var body: some View {
         NavigationSplitView {
             List {
