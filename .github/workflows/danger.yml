@@ -22,8 +22,9 @@ jobs:
         with:
           ruby-version: 3.0
 
-      - name: Install Danger
-        run: gem install danger danger-swiftlint
+      - name: Install Danger and Danger-SwiftLint
+        run: |
+          gem install danger danger-swiftlint
 
       - name: Run Danger
         env:
