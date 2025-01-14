@@ -41,6 +41,7 @@ struct ContentView: View {
             }
         } detail: {
             Text("Select an item")
+            Text("Pintinho - 1")
         }
     }
 
