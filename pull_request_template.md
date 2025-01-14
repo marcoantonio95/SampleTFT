@@ -1,9 +1,10 @@
 # 📋 O que está sendo feito?
 <!-- 
   Explique de forma clara e objetiva o que este Pull Request aborda. 
-  Informe o motivo das alterações e o impacto esperado. 
+  Informe o motivo das alterações e o impacto esperado.
+  Ex: Este Pull Request atualiza a versão da feature flag para corrigir [problema X] ou implementar [funcionalidade Y]. 
 -->
-Este Pull Request atualiza a versão da feature flag para corrigir [problema X] ou implementar [funcionalidade Y].
+Este Pull Request...
 
 # 🏗️ Referências
 <!-- 
@@ -13,8 +14,7 @@ Este Pull Request atualiza a versão da feature flag para corrigir [problema X] 
 
 | Tipo          | Referência            |
 | ------------- | --------------------- |
-| Tarefa        | [adicione a referência] |
-| Documentação  | [adicione a referência] |
+| Task        | [adicione a referência] |
 
 # 🥋 Como testar
 <!-- 
