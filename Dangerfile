@@ -1,3 +1,9 @@
+# Ensure PR title follows conventional commits
+unless /^(feat|fix|chore):\s/.match(github.pr_title)
+    options = %w(feat fix chore).join(", ")
+    fail("PR title should start with one of: #{options}. E.g.: 'feat: implement something'")
+end
+
 # Sometimes it's a README fix, or something like that - which isn't relevant for
 # including in a project's CHANGELOG for example
 declared_trivial = github.pr_title.include? "#trivial"
