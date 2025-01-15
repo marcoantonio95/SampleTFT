@@ -15,7 +15,7 @@ struct ContentView: View {
                     Text("Tela Inicial")
                         .font(.largeTitle)
                         .padding()
-                    
+
                     NavigationLink(destination: ScreenOne()) {
                         Text("Ir para Tela 1")
                             .padding()
@@ -23,7 +23,7 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .cornerRadius(8)
                     }
-                    
+
                     NavigationLink(destination: ScreenTwo()) {
                         Text("Ir para Tela 2")
                             .padding()
