@@ -9,7 +9,7 @@ import SwiftUI
 
 private class DevelopmentShakeWindow: UIWindow {
     var onShakeDetected: (() -> Void)?
-    
+
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             onShakeDetected?()
@@ -20,7 +20,7 @@ private class DevelopmentShakeWindow: UIWindow {
 
 internal class DevelopmentShakeSceneDelegate: NSObject, UIWindowSceneDelegate {
     var window: UIWindow?
-    
+
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
@@ -33,7 +33,7 @@ internal class DevelopmentShakeSceneDelegate: NSObject, UIWindowSceneDelegate {
             window.rootViewController = UIHostingController(rootView: contentView)
             window.makeKeyAndVisible()
             self.window = window
-            
+
             window.onShakeDetected = {
                 if let rootVC = window.rootViewController {
                     let debugView = UIHostingController(rootView: DevelopmentToolsHomeView())
