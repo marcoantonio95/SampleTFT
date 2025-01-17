@@ -25,7 +25,7 @@ struct DevelopmentToolsHomeView:
             .navigationTitle("Dev tools")
             .navigationBarItems(leading:
                  Image(systemName: "xmark")
-                .font(.title)
+                .font(.body)
                 .scaledToFit()
                 .foregroundColor(.black)
                 .onTapGesture {
