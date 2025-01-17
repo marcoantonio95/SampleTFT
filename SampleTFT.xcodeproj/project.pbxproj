@@ -391,7 +391,7 @@
 				CODE_SIGN_ENTITLEMENTS = SampleTFT/SampleTFT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SampleTFT/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SampleTFT/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = YTCQ84365P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -430,7 +430,7 @@
 				CODE_SIGN_ENTITLEMENTS = SampleTFT/SampleTFT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SampleTFT/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SampleTFT/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = YTCQ84365P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
