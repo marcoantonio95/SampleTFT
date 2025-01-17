@@ -32,7 +32,7 @@ class MockedRequestManagerViewModel: ObservableObject {
 
     func handleSaveOrUpdate() {
         guard !name.isEmpty, !url.isEmpty, !tag.isEmpty else { return }
-        
+
         if let editingItem = editingItem,
            let index = items.firstIndex(where: { $0.id == editingItem.id }) {
             items[index] = MockRequestItem(name: name, url: url, tag: tag)
