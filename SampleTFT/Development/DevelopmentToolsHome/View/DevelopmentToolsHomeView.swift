@@ -15,11 +15,13 @@ struct DevelopmentToolsHomeView:
         NavigationStack {
             VStack(alignment: .center) {
                 Spacer()
-                Text("Go to Request Mocker")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                NavigationLink(destination: MockedRequestListView()) {
+                    Text("Go to Request Mocker")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
                 Spacer()
             }
             .navigationTitle("Dev tools")
