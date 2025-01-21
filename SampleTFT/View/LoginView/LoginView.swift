@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct LoginView: View {
     var body: some View {
             NavigationStack {
                 VStack(spacing: 20) {
@@ -16,7 +16,7 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .padding()
 
-                    NavigationLink(destination: ScreenOne()) {
+                    NavigationLink(destination: TierListView()) {
                         Text("Ir para Tela 1")
                             .padding()
                             .background(Color.blue)
@@ -24,7 +24,7 @@ struct ContentView: View {
                             .cornerRadius(8)
                     }
 
-                    NavigationLink(destination: ScreenTwo()) {
+                    NavigationLink(destination: UserProfileView()) {
                         Text("Ir para Tela 2")
                             .padding()
                             .background(Color.green)
@@ -38,5 +38,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    LoginView()
 }

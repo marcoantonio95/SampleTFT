@@ -1,5 +1,5 @@
 //
-//  ScreenOne.swift
+//  ScreenTwo.swift
 //  SampleTFT
 //
 //  Created by Marco Antonio on 14/01/25.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ScreenOne: View {
+struct UserProfileView: View {
     var body: some View {
-        Text("Tela 1")
+        Text("UserProfile")
     }
 }
 
 #Preview {
-    ScreenOne()
+    UserProfileView()
 }
